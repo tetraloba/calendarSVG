@@ -1,8 +1,9 @@
 # 導入方法 (How to Install)
 ## for Windows
-calendar.ps1を編集し、以下の2点を行ってください。
+Pythonの実行環境を構築してください。(Python3.8.10, pip23.1.2, requirements.txt)
+
+calendar.ps1を編集し、以下を行ってください。
 - 画像ファイル(.svg, .png)を生成するディレクトリパスを指定してください。
-- Inkscapeのコマンドファイル(inkscape.com)のパスを指定してください。
 
 PowerShellの実行ファイル(powershell.exe)のショートカットを作成し、以下の2点を行ってください。
 - 「リンク先」に「実行ポリシーの変更」「ウィンドウの非表示設定」「対象ファイル(スクリプト(.ps1))の指定」を追記してください。  
