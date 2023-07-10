@@ -1,0 +1,16 @@
+{
+    "width": 1920,
+    "height": 1080,
+    "matrix_x1": 100,
+    "matrix_y1": 100,
+    "matrix_x2": 1820,
+    "matrix_y2": 980,
+    "matrix_stroke_color": [0, 255, 0],
+    "background_color": [0, 0, 0],
+    "sunday_fill_color": [255, 0, 0],
+    "saturday_fill_color": [0, 0, 255],
+    "text_color": [255, 255, 255],
+    "font_size": 50,
+    "rows": 6,
+    "begin_on_monday": false
+}
