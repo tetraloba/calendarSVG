@@ -1,6 +1,8 @@
 from datetime import datetime
 import calendar
-from Clifig import Clifig
+
+from .clifig import Clifig
+
 class Calendar(Clifig):
     def draw_calendar(self, today:datetime):
         # 色を変える用の文字列
@@ -55,6 +57,3 @@ class Calendar(Clifig):
         # print('\033[m') # 修飾を解除
         super().append('\033[m')
         super().print()
-
-my_calendar = Calendar(row=5, column=10)
-my_calendar.draw_calendar(datetime.now()) # 現在日時を渡す
