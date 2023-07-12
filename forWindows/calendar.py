@@ -67,7 +67,7 @@ class Calendar:
         svg.stroke_width = 3
         svg.fill_color = RGB(0, 255, 0)
         # 背景色の設定
-        svg.rect(0, 0, '100%', '100%', self.background_color)
+        svg.rect(0, 0, '100%', '100%', self.background_color, stroke_width=0)
         # 日曜日と土曜日に色を付ける
         self.__fill_sun_sat(svg)
         # マトリックスを出力

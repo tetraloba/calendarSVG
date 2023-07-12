@@ -19,9 +19,9 @@ png_filenaame_small = date + '_small.png'
 # .\.venv\Scripts\Activate.ps1 # python venv start
 
 # generate SVG
-calendar = Calendar(1920, 1080, 1070, 600, 1870, 1030, 50) # regular
+calendar = Calendar(1920, 1080, 200, 200, 1870, 1030, 50) # regular
 calendar.draw_calendar(svg_filename)
-calendar = Calendar(1920, 1080, 200, 200, 1870, 1030, 50) # small
+calendar = Calendar(1920, 1080, 1070, 600, 1870, 1030, 50) # small
 calendar.draw_calendar(svg_filename_small)
 
 # SVG->PNG convert
