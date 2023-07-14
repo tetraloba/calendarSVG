@@ -1,4 +1,6 @@
 from datetime import datetime
+import glob
+import random
 
 from .SVG4Python.svg4py.svg import SVG, RGB
 from ..common_modules.calendar_util import calendar_dates as cd
@@ -55,11 +57,18 @@ class Calendar:
             for x in self.x_list[:-1]:
                 date = gen_itr.__next__()
                 # print(date.month, self.today.month) # debug
+                if date == self.today:
+                    cats = glob.glob('./calendarSVG/forWindows/data/fig/cats/*.svg')
+                    cat_index = random.randint(0, cats.__len__() -1) # ランダムにファイル(のインデックス)を選ぶ
+                    cell_width = self.x_list[1] - self.x_list[0]
+                    cell_height = self.y_list[1] - self.y_list[0]
+                    svg.rect(x, y, cell_width, cell_height, RGB(150, 150, 0), stroke_width=0)
+                    svg.import_svg(cats[cat_index], x + cell_width - cell_height, y, cell_height, cell_height)
                 if date.month == self.today.month:
                     stroke_color = color
                 else:
                     stroke_color = RGB(color.r // 2, color.g // 2, color.b // 2)
-                svg.text(x + padding, y + font_size, str(date.day), None, font_size, stroke_color, stroke_width=0)
+                svg.text(x + padding, y + font_size, str(date.day), None, font_size, stroke_color, self.background_color, 1)
         return None
     
     def draw_calendar(self, file_name):
