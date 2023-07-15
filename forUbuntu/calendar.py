@@ -16,7 +16,7 @@ class Calendar(Clifig):
         # print(green + today.strftime("%B"), today.year) # 年月を出力
         super().append(green + today.strftime("%B") + ' ' + str(today.year))
         # print(u_line + red + " Sun" + green + " Mon Tue Wed Thu Fri" + blue + " Sat " + green) # 曜日を出力
-        super().append(u_line + red + " Sun" + green + " Mon Tue Wed Thu Fri" + blue + " Sat " + green)
+        super().append(u_line + red + "  Sun" + green + "  Mon  Tue  Wed  Thu  Fri" + blue + "  Sat " + green)
         # 日付部分を出力
         first_wday, date_max = calendar.monthrange(today.year, today.month)
         offset = (first_wday + 1) % 7
@@ -37,7 +37,9 @@ class Calendar(Clifig):
                     # print(yellow_b, end='')
                     line += yellow_b
 
-                date_str = str(date).rjust(3) if 1 <= date and date <= date_max else '   '
+                date_str = str(date).ljust(4) if 1 <= date and date <= date_max else '    '
+                if date == today.day:
+                    date_str = str(date).ljust(2) + '🐈'
                 # print(date_str, end='') # 日付を出力
                 line += date_str
 
